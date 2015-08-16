@@ -27,3 +27,5 @@ We use machine learning to learn insider pays and emailing habits of POIs and no
 - In depth learning on AdaBoost classifier: https://chrisjmccormick.wordpress.com/2013/12/13/adaboost-tutorial/
 - Cross-validation: the illusion of reliable performance estimation - Zolt´an Prekopcs´ak, Tam´as Henk, Csaba G´asp´ar-Papanek
 - And tons of other resources.
+
+I hereby confirm that this submission is my work. I have cited above the origins of any parts of the submission that were taken from Websites, books, forums, blog posts, github repositories, etc.
