@@ -1,4 +1,4 @@
-In 2000, Enron was one of the largest companies in the United States. By 2002, it had collapsed into bankruptcy due to widespread corporate fraud. In the resulting Federal investigation, there was a significant amount of typically confidential information entered into public record, including tens of thousands of emails and detailed financial data for top executives.
+﻿In 2000, Enron was one of the largest companies in the United States. By 2002, it had collapsed into bankruptcy due to widespread corporate fraud. In the resulting Federal investigation, there was a significant amount of typically confidential information entered into public record, including tens of thousands of emails and detailed financial data for top executives.
 This project attempts to predict the likelihood of someone being a suspect of Enron fraud conspiracy by looking at given dataset. We call the suspects Person of Interest (POI). The dataset contains insider pays to all Enron executives as well as emails sent through their company accounts, and their POI status.
 We use machine learning to learn insider pays and emailing habits of POIs and non-POIs and see if we can find a pattern there, then use the model created to predict the likeliness of someone with a particular pattern of being a POI or not.
 
@@ -27,3 +27,5 @@ We use machine learning to learn insider pays and emailing habits of POIs and no
 - In depth learning on AdaBoost classifier: https://chrisjmccormick.wordpress.com/2013/12/13/adaboost-tutorial/
 - Cross-validation: the illusion of reliable performance estimation - Zolt´an Prekopcs´ak, Tam´as Henk, Csaba G´asp´ar-Papanek
 - And tons of other resources.
+
+I hereby confirm that this submission is my work. I have cited above the origins of any parts of the submission that were taken from Websites, books, forums, blog posts, github repositories, etc.
