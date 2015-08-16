@@ -1,6 +1,11 @@
-In 2000, Enron was one of the largest companies in the United States. By 2002, it had collapsed into bankruptcy due to widespread corporate fraud. In the resulting Federal investigation, there was a significant amount of typically confidential information entered into public record, including tens of thousands of emails and detailed financial data for top executives.
+﻿In 2000, Enron was one of the largest companies in the United States. By 2002, it had collapsed into bankruptcy due to widespread corporate fraud. In the resulting Federal investigation, there was a significant amount of typically confidential information entered into public record, including tens of thousands of emails and detailed financial data for top executives.
 This project attempts to predict the likelihood of someone being a suspect of Enron fraud conspiracy by looking at given dataset. We call the suspects Person of Interest (POI). The dataset contains insider pays to all Enron executives as well as emails sent through their company accounts, and their POI status.
 We use machine learning to learn insider pays and emailing habits of POIs and non-POIs and see if we can find a pattern there, then use the model created to predict the likeliness of someone with a particular pattern of being a POI or not.
+
+## Online documentation
+- https://jaycode.github.io/enron/identifying-fraud-from-enron-email.html
+- https://jaycode.github.io/enron/correlation-analysis.html
+- https://jaycode.github.io/enron/bag-of-words-implementation.html
 
 ## References
 - A Few Useful Things to Know about Machine Learning - Pedro Domingos, Department of Computer Science and Engineering, University of Washington

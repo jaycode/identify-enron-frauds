@@ -5548,7 +5548,7 @@ Name: from_poi_to_this_person_ratio, dtype: float64
 <h2 id="7.-Text-Learning-From-Emails">7. Text Learning From Emails<a class="anchor-link" href="#7.-Text-Learning-From-Emails">&#182;</a></h2><p>Emails sent and received by Enron's employees are publicly available for <a href="https://www.cs.cmu.edu/~./enron/">download</a>. In this section I attempt to load the dataset and see if we can improve the prediction with them added into our features.</p>
 <p>To do this, first I loaded all emails from their respective directories, then vectorize and combine them with our previous features, then classify them.</p>
 <p>I used sklearn's implementation of Tfidf algorithm to vectorize the messages using the module TfidfVectorizer.</p>
-<h3 id="7.1.-Initial-Tfidf-Implementation">7.1. Initial Tfidf Implementation<a class="anchor-link" href="#7.1.-Initial-Tfidf-Implementation">&#182;</a></h3><p>Prior to implementing TfidfVectorizer in our dataset, I wanted to find a proof if it was going to be useful. I created a small script to test classfying only vectorized words in "Bag of Words Implementation" document. The quality metrics given at the end was as follows:</p>
+<h3 id="7.1.-Initial-Tfidf-Implementation">7.1. Initial Tfidf Implementation<a class="anchor-link" href="#7.1.-Initial-Tfidf-Implementation">&#182;</a></h3><p>Prior to implementing TfidfVectorizer in our dataset, I wanted to find a proof if it was going to be useful. I created a small script to test classfying only vectorized words in <a href="https://jaycode.github.io/enron/bag-of-words-implementation.html">"Bag of Words Implementation" document</a>. The quality metrics given at the end was as follows:</p>
 
 <pre><code>DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
             max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
@@ -5634,7 +5634,7 @@ else:
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Wall time: 1min 1s
+<pre>Wall time: 24.7 s
 </pre>
 </div>
 </div>
@@ -5874,7 +5874,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">hide_me</span>
@@ -5941,7 +5941,7 @@ else:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -5989,7 +5989,7 @@ test_classifier(pipeline, data_dict_with_words, features_list_with_words, folds=
 	Accuracy: 0.80000	Precision: 0.22222	Recall: 0.20000	F1: 0.21053	F2: 0.20408
 	Total predictions:  150	True positives:    4	False positives:   14	False negatives:   16	True negatives:  116
 
-Wall time: 1min 39s
+Wall time: 1min 45s
 </pre>
 </div>
 </div>
@@ -6026,7 +6026,7 @@ Wall time: 1min 39s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">hide_me</span>
@@ -6081,7 +6081,7 @@ Wall time: 1min 39s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">hide_me</span>
@@ -6128,7 +6128,7 @@ Wall time: 1min 39s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">hide_me</span>
@@ -6172,13 +6172,21 @@ Wall time: 1min 39s
 </div>
 </div>
 
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Anaconda\lib\site-packages\sklearn\metrics\classification.py:958: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  &apos;precision&apos;, &apos;predicted&apos;, average, warn_for)
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6207,7 +6215,7 @@ test_classifier(decision_tree_clf_fin, data_dict_fe, features_list_fe)
 	Accuracy: 0.84380	Precision: 0.40902	Recall: 0.38550	F1: 0.39691	F2: 0.38998
 	Total predictions: 15000	True positives:  771	False positives: 1114	False negatives: 1229	True negatives: 11886
 
-Wall time: 1.07 s
+Wall time: 1.13 s
 </pre>
 </div>
 </div>
@@ -6218,7 +6226,7 @@ Wall time: 1.07 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">hide_me</span>
@@ -6267,7 +6275,7 @@ Wall time: 1.07 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6296,7 +6304,7 @@ test_classifier(svm_clf_fin, data_dict_fe, features_list_fe)
 	Accuracy: 0.86667	Precision: 0.00000	Recall: 0.00000	F1: 0.00000	F2: 0.00000
 	Total predictions: 15000	True positives:    0	False positives:    0	False negatives: 2000	True negatives: 13000
 
-Wall time: 1.41 s
+Wall time: 1.71 s
 </pre>
 </div>
 </div>
@@ -6318,7 +6326,7 @@ Wall time: 1.41 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">hide_me</span>
@@ -6364,7 +6372,7 @@ Wall time: 1.41 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6390,7 +6398,7 @@ test_classifier(nb_clf_fin, data_dict_fe, features_list_fe)
 	Accuracy: 0.40287	Precision: 0.16722	Recall: 0.87400	F1: 0.28074	F2: 0.47364
 	Total predictions: 15000	True positives: 1748	False positives: 8705	False negatives:  252	True negatives: 4295
 
-Wall time: 1.28 s
+Wall time: 1.85 s
 </pre>
 </div>
 </div>
@@ -6428,7 +6436,7 @@ GaussianNB              1.3              0.16722         0.87400      0.28074</c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">hide_me</span>
@@ -6483,7 +6491,7 @@ GaussianNB              1.3              0.16722         0.87400      0.28074</c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6511,7 +6519,7 @@ test_classifier(ada_boost_clf_fin, data_dict_fe, features_list_fe)
 	Accuracy: 0.84387	Precision: 0.41000	Recall: 0.38950	F1: 0.39949	F2: 0.39343
 	Total predictions: 15000	True positives:  779	False positives: 1121	False negatives: 1221	True negatives: 11879
 
-Wall time: 1.8 s
+Wall time: 1.9 s
 </pre>
 </div>
 </div>
@@ -6548,7 +6556,7 @@ AdaBoostClassifier      1.8              0.41000         0.38950      0.39949</c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6583,25 +6591,10 @@ print(&quot;The best parameters are %s with a score of %0.2f&quot;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The best parameters are {&apos;classifier__max_features&apos;: None, &apos;classifier__criterion&apos;: &apos;entropy&apos;} with a score of 0.21
-Wall time: 1min 12s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6615,32 +6608,10 @@ test_classifier(random_forest_clf_fin, data_dict_fe, features_list_fe)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline(steps=[(&apos;features&apos;, FeatureUnion(n_jobs=1,
-       transformer_list=[(&apos;scale&apos;, MinMaxScaler(copy=True, feature_range=(0, 1)))],
-       transformer_weights=None)), (&apos;classifier&apos;, RandomForestClassifier(bootstrap=True, class_weight=None, criterion=&apos;entropy&apos;,
-            max_depth=None, max_features=Non...stimators=10, n_jobs=1,
-            oob_score=False, random_state=13, verbose=0, warm_start=False))])
-	Accuracy: 0.86013	Precision: 0.43890	Recall: 0.17600	F1: 0.25125	F2: 0.19995
-	Total predictions: 15000	True positives:  352	False positives:  450	False negatives: 1648	True negatives: 12550
-
-Wall time: 11.9 s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># %%time</span>
@@ -6681,28 +6652,10 @@ Wall time: 11.9 s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-Fitting 1000 folds for each of 9 candidates, totalling 9000 fits
-The best parameters are {&apos;classifier__learning_rate&apos;: 0.3, &apos;classifier__max_features&apos;: None} with a score of 0.29
-Wall time: 7min 4s
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6718,28 +6671,6 @@ test_classifier(gb_clf_fin, data_dict_fe, features_list_fe)
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline(steps=[(&apos;features&apos;, FeatureUnion(n_jobs=1,
-       transformer_list=[(&apos;scale&apos;, MinMaxScaler(copy=True, feature_range=(0, 1)))],
-       transformer_weights=None)), (&apos;classifier&apos;, GradientBoostingClassifier(init=None, learning_rate=0.3, loss=&apos;deviance&apos;,
-              max_depth=3, max_features=None, max...=0.0, n_estimators=100,
-              random_state=13, subsample=1.0, verbose=0, warm_start=False))])
-	Accuracy: 0.85193	Precision: 0.41905	Recall: 0.28600	F1: 0.33997	F2: 0.30539
-	Total predictions: 15000	True positives:  572	False positives:  793	False negatives: 1428	True negatives: 12207
-
-Wall time: 50.2 s
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -6775,7 +6706,7 @@ GradientBoostClassifier 53.8             0.41905         0.28600      0.33997</c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># %%time</span>
@@ -6828,28 +6759,10 @@ GradientBoostClassifier 53.8             0.41905         0.28600      0.33997</c
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-The best parameters are {&apos;classifier__max_features&apos;: None, &apos;reduce_dim__n_components&apos;: None, &apos;classifier__min_samples_split&apos;: 2, &apos;classifier__class_weight&apos;: {0: 0.3, 1: 0.8}, &apos;classifier__splitter&apos;: &apos;best&apos;, &apos;classifier__min_samples_leaf&apos;: 2, &apos;classifier__min_weight_fraction_leaf&apos;: 0, &apos;classifier__max_depth&apos;: 3, &apos;classifier__criterion&apos;: &apos;entropy&apos;} with a score of 0.27
-
-Wall time 75min
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6868,27 +6781,6 @@ test_classifier(final_clf_fail, data_dict_fe, features_list_fe)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline(steps=[(&apos;scale&apos;, MinMaxScaler(copy=True, feature_range=(0, 1))), (&apos;reduce_dim&apos;, PCA(copy=True, n_components=None, whiten=False)), (&apos;classifier&apos;, DecisionTreeClassifier(class_weight={0: 0.3, 1: 0.8}, criterion=&apos;entropy&apos;,
-            max_depth=3, max_features=None, max_leaf_nodes=None,
-            min_samples_leaf=2, min_samples_split=2,
-            min_weight_fraction_leaf=0, random_state=13, splitter=&apos;best&apos;))])
-	Accuracy: 0.77880	Precision: 0.25429	Recall: 0.34100	F1: 0.29133	F2: 0.31923
-	Total predictions: 15000	True positives:  682	False positives: 2000	False negatives: 1318	True negatives: 11000
-
-Wall time: 2.31 s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -6903,7 +6795,7 @@ Wall time: 2.31 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c"># %%time</span>
@@ -6955,29 +6847,10 @@ Wall time: 2.31 s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-Fitting 1000 folds for each of 432 candidates, totalling 432000 fits
-The best parameters are {&apos;classifier__max_features&apos;: None, &apos;classifier__min_samples_split&apos;: 2, &apos;classifier__class_weight&apos;: {0: 0.3, 1: 0.8}, &apos;classifier__splitter&apos;: &apos;best&apos;, &apos;classifier__min_samples_leaf&apos;: 2, &apos;classifier__min_weight_fraction_leaf&apos;: 0, &apos;classifier__max_depth&apos;: 3, &apos;classifier__criterion&apos;: &apos;entropy&apos;} with a score of 0.51
-
-Wall time 22min 6s
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -6996,27 +6869,6 @@ test_classifier(final_clf_no_pca_optimized, data_dict_fe, features_list_fe)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline(steps=[(&apos;scale&apos;, MinMaxScaler(copy=True, feature_range=(0, 1))), (&apos;classifier&apos;, DecisionTreeClassifier(class_weight={0: 0.3, 1: 0.8}, criterion=&apos;entropy&apos;,
-            max_depth=3, max_features=None, max_leaf_nodes=None,
-            min_samples_leaf=2, min_samples_split=2,
-            min_weight_fraction_leaf=0, random_state=13, splitter=&apos;best&apos;))])
-	Accuracy: 0.86047	Precision: 0.47906	Recall: 0.53200	F1: 0.50415	F2: 0.52050
-	Total predictions: 15000	True positives: 1064	False positives: 1157	False negatives:  936	True negatives: 11843
-
-Wall time: 2 s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -7031,7 +6883,7 @@ Wall time: 2 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -7074,25 +6926,10 @@ print(&quot;The best parameters are %s with a score of %0.2f&quot;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The best parameters are {&apos;classifier__max_features&apos;: None, &apos;classifier__min_samples_split&apos;: 2, &apos;classifier__class_weight&apos;: {0: 0.3, 1: 0.8}, &apos;classifier__splitter&apos;: &apos;best&apos;, &apos;classifier__min_samples_leaf&apos;: 2, &apos;classifier__min_weight_fraction_leaf&apos;: 0, &apos;classifier__max_depth&apos;: 3, &apos;classifier__criterion&apos;: &apos;entropy&apos;} with a score of 0.51
-Wall time: 40 s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -7103,27 +6940,6 @@ test_classifier(final_clf_no_pca_confirm, data_dict_fe, features_list_fe)
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline(steps=[(&apos;scale&apos;, MinMaxScaler(copy=True, feature_range=(0, 1))), (&apos;classifier&apos;, DecisionTreeClassifier(class_weight={0: 0.3, 1: 0.8}, criterion=&apos;entropy&apos;,
-            max_depth=3, max_features=None, max_leaf_nodes=None,
-            min_samples_leaf=2, min_samples_split=2,
-            min_weight_fraction_leaf=0, random_state=13, splitter=&apos;best&apos;))])
-	Accuracy: 0.86047	Precision: 0.47906	Recall: 0.53200	F1: 0.50415	F2: 0.52050
-	Total predictions: 15000	True positives: 1064	False positives: 1157	False negatives:  936	True negatives: 11843
-
-Wall time: 1.39 s
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -7141,7 +6957,7 @@ Wall time: 1.39 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -7190,31 +7006,10 @@ Wall time: 14min 2s
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-
-The best parameters are {&apos;classifier__learning_rate&apos;: 0.1, &apos;classifier__base_estimator&apos;: DecisionTreeClassifier(class_weight={0: 0.3, 1: 0.8}, criterion=&apos;entropy&apos;,
-            max_depth=3, max_features=None, max_leaf_nodes=None,
-            min_samples_leaf=2, min_samples_split=2,
-            min_weight_fraction_leaf=0, random_state=13, splitter=&apos;best&apos;), &apos;classifier__n_estimators&apos;: 10} with a score of 0.29
-Wall time: 14min 2s
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -7233,29 +7028,6 @@ test_classifier(final_ada_boost_clf_optimized, data_dict_fe, features_list_fe)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline(steps=[(&apos;scale&apos;, MinMaxScaler(copy=True, feature_range=(0, 1))), (&apos;classifier&apos;, AdaBoostClassifier(algorithm=&apos;SAMME.R&apos;,
-          base_estimator=DecisionTreeClassifier(class_weight=None, criterion=&apos;entropy&apos;, max_depth=None,
-            max_features=&apos;auto&apos;, max_leaf_nodes=None, min_samples_leaf=1,
-            min_samples_split=2, min_weight_fraction_leaf=0.0,
-            random_state=13, splitter=&apos;best&apos;),
-          learning_rate=0.1, n_estimators=10, random_state=13))])
-	Accuracy: 0.84387	Precision: 0.41000	Recall: 0.38950	F1: 0.39949	F2: 0.39343
-	Total predictions: 15000	True positives:  779	False positives: 1121	False negatives: 1221	True negatives: 11879
-
-Wall time: 1.89 s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -7269,7 +7041,7 @@ Wall time: 1.89 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="o">%%</span><span class="k">time</span>
@@ -7285,27 +7057,6 @@ test_classifier(final_clf_no_pca_confirm, data_dict_fe, features_list_fe)
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Pipeline(steps=[(&apos;scale&apos;, MinMaxScaler(copy=True, feature_range=(0, 1))), (&apos;classifier&apos;, DecisionTreeClassifier(class_weight={0: 0.3, 1: 0.8}, criterion=&apos;entropy&apos;,
-            max_depth=3, max_features=None, max_leaf_nodes=None,
-            min_samples_leaf=2, min_samples_split=2,
-            min_weight_fraction_leaf=0, random_state=13, splitter=&apos;best&apos;))])
-	Accuracy: 0.86047	Precision: 0.47906	Recall: 0.53200	F1: 0.50415	F2: 0.52050
-	Total predictions: 15000	True positives: 1064	False positives: 1157	False negatives:  936	True negatives: 11843
-
-Wall time: 1.43 s
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
